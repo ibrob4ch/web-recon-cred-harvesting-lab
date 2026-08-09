@@ -19,6 +19,8 @@ Skipfish performs a brute-force-style crawl using the supplied dictionary file, 
 
 The completed scan's `index.html` report was reviewed in a browser, surfacing a summary of document types and issue categories. Three notable vulnerability classes were identified and analyzed:
 
+![Skipfish scan output directory](./images/00-skipfish-output-directory.png)
+
 ### Directory Traversal Vulnerability
 
 Arises when user-controllable input is used to construct a file or URL path on the server without proper sanitization. If exploitable, an attacker can manipulate that path (the classic "dot-dot-slash" / path traversal technique, per OWASP terminology) to access files outside the intended web root — application configuration files, server-side source code, or other resources the web server was never meant to expose directly.

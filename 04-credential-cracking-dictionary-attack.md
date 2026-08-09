@@ -29,6 +29,8 @@ hydra -L /usr/share/wordlists/Usernames.txt -P /usr/share/wordlists/Passwords.tx
 
 Hydra iterated through username/password combinations from both wordlists against the FTP service. Because the correct credentials were seeded into the wordlists, Hydra successfully identified and displayed the working combination.
 
+![Hydra dictionary attack success](./images/05-hydra-dictionary-attack-success.png)
+
 ## Step 5 — Validate Access
 
 Logged into the FTP server using the cracked credentials, confirming they granted real access — not just a syntactically valid response.
@@ -36,6 +38,8 @@ Logged into the FTP server using the cracked credentials, confirming they grante
 ## Step 6 — Demonstrate Impact
 
 From the Kali machine's FTP session (now authenticated with the cracked credentials), created a new directory plus several test files. Then logged directly into the Windows Server 2016 machine and confirmed those same files/directory were present — proving the "attack" resulted in genuine remote write access to the target filesystem, not just a successful login banner.
+
+![Successful FTP login using cracked credentials](./images/06-ftp-login-with-cracked-creds.png)
 
 ## Takeaway
 

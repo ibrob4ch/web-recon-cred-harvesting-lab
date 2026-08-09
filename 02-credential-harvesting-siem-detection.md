@@ -21,6 +21,8 @@ SET offers several website-based attack modules, each with a distinct technique:
 | Multi-Attack | Chains several of the above together |
 | HTA Attack | Clones a site and injects PowerShell via an HTA file for Windows-based exploitation |
 
+![SET website attack vector menu](./images/02-set-attack-vectors-menu.png)
+
 ### Site Cloning
 
 Selected **Site Cloner**, which fully clones a target website and enables use of the same attack vectors within that cloned copy. Supplied:
@@ -32,6 +34,8 @@ Once cloned, the malicious URL would normally be distributed to a target via phi
 ## Victim Interaction
 
 From the Detection Lab Windows 10 machine, browsing to the Kali VM's IP loaded the cloned login page — visually identical to the real site. Submitting any credentials into the cloned form did **not** log the user in; instead, the credentials were silently captured by SET running on the Kali machine, and the browser was redirected to the real login page — a design that minimizes victim suspicion, since the flow ends at the legitimate site as if nothing unusual happened.
+
+![Cloned login page harvesting credentials](./images/01-cloned-login-credential-harvester.png)
 
 ## Credential Capture
 

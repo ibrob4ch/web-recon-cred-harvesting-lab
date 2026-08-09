@@ -8,6 +8,8 @@ Before the credential cracking exercise in Part 4 could take place, a target FTP
 2. **Created an FTP site**, bound to the server, serving as the target service for the exercise.
 3. **Created a dedicated Windows user group** for FTP access — separating FTP-permitted accounts from general server accounts, rather than granting FTP access broadly.
 
+![IIS FTP site configuration](./images/03-iis-ftp-site-config.png)
+
 ## Hardening Measures Applied
 
 ### User Isolation
@@ -21,6 +23,8 @@ Added a virtual directory to the FTP site and explicitly configured its permissi
 ### Firewall Configuration
 
 Configured **Windows Firewall with Advanced Security** with the three inbound rules required for external FTP connectivity (control channel plus the passive/active data channel rules FTP requires beyond a single port). Without correctly scoped firewall rules, FTP's use of dynamic data ports beyond the standard control port (21) is a common source of "it doesn't work" — getting this right was itself a useful piece of the exercise, distinct from the security-hardening steps above.
+
+![FTP server firewall inbound rules](./images/04-ftp-firewall-rules.png)
 
 ## Validation
 
